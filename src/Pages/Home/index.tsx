@@ -1,7 +1,14 @@
 import React from 'react'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import introImage from '../../assets/coffeIntroImage.png'
-import { MainContainer } from './styles'
+import {
+  CartItem,
+  CoffeeItem,
+  InfoItens,
+  MainContainer,
+  PackageItem,
+  TimerItem,
+} from './styles'
 
 export function Home() {
   return (
@@ -14,24 +21,32 @@ export function Home() {
             hora
           </h2>
         </div>
-        <div>
-          <div>
-            <ShoppingCart size={'16'} weight="fill" />
+        <InfoItens>
+          <CartItem>
+            <div className="item">
+              <ShoppingCart size={'16'} weight="fill" />
+            </div>
             <span>Compra simples e segura</span>
-          </div>
-          <div>
-            <Timer size={'16'} weight="fill" />
-            <span>Entrega rápida e rastreada</span>
-          </div>
-          <div>
-            <Package size={'16'} weight="fill" />
+          </CartItem>
+          <PackageItem>
+            <div className="item">
+              <Package size={'16'} weight="fill" />
+            </div>
             <span>Embalagem mantém o café intacto</span>
-          </div>
-          <div>
-            <Coffee size={'16'} weight="fill" />
+          </PackageItem>
+          <TimerItem>
+            <div className="item">
+              <Timer size={'16'} weight="fill" />
+            </div>
+            <span>Entrega rápida e rastreada</span>
+          </TimerItem>
+          <CoffeeItem>
+            <div className="item">
+              <Coffee size={'16'} weight="fill" />
+            </div>
             <span>O café chega fresquinho até você</span>
-          </div>
-        </div>
+          </CoffeeItem>
+        </InfoItens>
       </div>
       <div>
         <img src={introImage} alt="" />
