@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-
 export const MainContainer = styled.main`
-  display: flex;
   h1 {
     font-family: 'Baloo 2', sans-serif;
     font-weight: 800;
@@ -12,6 +10,9 @@ export const MainContainer = styled.main`
     font-size: 20px;
   }
 `
+export const IntroContainer = styled.div`
+  display: flex;
+`
 export const InfoItens = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -21,6 +22,7 @@ export const CartItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 20px;
   .item {
     display: flex;
     align-items: center;
@@ -49,9 +51,9 @@ export const TimerItem = styled.div`
 `
 export const PackageItem = styled.div`
   display: flex;
-  display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 20px;
   .item {
     display: flex;
     align-items: center;
@@ -64,7 +66,6 @@ export const PackageItem = styled.div`
   }
 `
 export const CoffeeItem = styled.div`
-  display: flex;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -79,3 +80,29 @@ export const CoffeeItem = styled.div`
     color: ${({ theme }) => theme.colors['base-white']};
   }
 `
+export const CoffeList = styled.div`
+  h2 {
+    font-weight: 800;
+    font-size: 2rem;
+    font-family: 'Baloo 2', sans-serif;
+  }
+`
+export const CoffeCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.theme.colors['base-card']};
+  border-radius: 6px 36px;
+  width: 256px;
+`
+export const CoffeImage = styled.img`
+  align-self: center;
+  width: 120px;
+  position: relative;
+  top: -20px;
+`
+export const CoffeName = styled.h3``
+export const CoffeType = styled.span``
+export const CoffeDescription = styled.p``
+export const CoffePrice = styled.span``
+export const CoffeAmount = styled.div``
+export const CoffeAddToCartButton = styled.button``
