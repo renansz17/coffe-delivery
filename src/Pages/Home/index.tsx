@@ -9,7 +9,9 @@ import {
 } from 'phosphor-react'
 import introImage from '../../assets/coffeIntroImage.png'
 import {
+  BuyContainer,
   CartItem,
+  CoffeAddToCartButton,
   CoffeAmount,
   CoffeCard,
   CoffeDescription,
@@ -18,7 +20,10 @@ import {
   CoffeList,
   CoffeName,
   CoffePrice,
+  CoffePriceContainer,
   CoffeType,
+  CoffeTypeContainer,
+  CounterButton,
   InfoItens,
   IntroContainer,
   MainContainer,
@@ -75,22 +80,33 @@ export function Home() {
         <div>
           <CoffeCard>
             <CoffeImage src={coffe} alt="" />
-            <CoffeType>tradicional</CoffeType>
+            <CoffeTypeContainer>
+              <CoffeType>
+                <span>TRADICIONAL</span>
+              </CoffeType>
+            </CoffeTypeContainer>
             <CoffeName>expresso tradicional</CoffeName>
             <CoffeDescription>
               o tradicional café feito com água quente e grãos moidos
             </CoffeDescription>
-            <div>
-              <CoffePrice>R$ 9,90</CoffePrice>
-              <CoffeAmount>
-                <div>
-                  <Plus />
-                  <span></span>
-                  <Minus />
-                </div>
-              </CoffeAmount>
-              <button></button>
-            </div>
+            <CoffePriceContainer>
+              <CoffePrice>
+                <span className="currencyType">R$</span>
+                <span className="price">9,90</span>
+              </CoffePrice>
+              <BuyContainer>
+                <CoffeAmount>
+                  <CounterButton>
+                    <Minus size={'14'} color={'#8047F8'} />
+                    <span>1</span>
+                    <Plus size={'14'} color={'#8047F8'} />
+                  </CounterButton>
+                </CoffeAmount>
+                <CoffeAddToCartButton>
+                  <ShoppingCart size={'22'} color={'white'} />
+                </CoffeAddToCartButton>
+              </BuyContainer>
+            </CoffePriceContainer>
           </CoffeCard>
         </div>
       </CoffeList>
