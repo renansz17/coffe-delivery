@@ -4,7 +4,7 @@ export const coffeees = [
     tags: ['tradicional'],
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
-    photo: 'tradicional.png',
+    photo: 'expresso.png',
     price: 9.9,
   },
   {

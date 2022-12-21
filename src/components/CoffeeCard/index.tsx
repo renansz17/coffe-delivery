@@ -32,7 +32,7 @@ export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
 
   return (
     <CoffeeCardContainer>
-      <CoffeeImage src={`${coffeee.photo}`} alt="" />
+      <CoffeeImage src={`src/assets/${coffeee.photo}`} alt="" />
       <CoffeeTypeContainer>
         <CoffeeType>
           {coffeee.tags?.map((tag) => (

@@ -14,7 +14,7 @@ export const CoffeeImage = styled.img`
   align-self: center;
   width: 120px;
   position: relative;
-  top: -20px;
+  top: -40px;
 `
 export const CoffeeName = styled.h3`
   margin-bottom: 8px;
