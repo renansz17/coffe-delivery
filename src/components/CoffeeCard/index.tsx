@@ -1,25 +1,25 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useState } from 'react'
-import { Coffe } from '../../interfaces/Coffe'
+import { Coffee } from '../../interfaces/Coffee'
 import {
   BuyContainer,
-  CoffeAddToCartButton,
-  CoffeAmount,
-  CoffeCardContainer,
-  CoffeDescription,
-  CoffeImage,
-  CoffeName,
-  CoffePrice,
-  CoffePriceContainer,
-  CoffeType,
-  CoffeTypeContainer,
+  CoffeeAddToCartButton,
+  CoffeeAmount,
+  CoffeeCardContainer,
+  CoffeeDescription,
+  CoffeeImage,
+  CoffeeName,
+  CoffeePrice,
+  CoffeePriceContainer,
+  CoffeeType,
+  CoffeeTypeContainer,
   CounterButton,
 } from './styles'
-interface CoffeCardInterface {
-  coffee: Coffe
+interface CoffeeCardInterface {
+  coffeee: Coffee
 }
 
-export function CoffeCard({ coffee }: CoffeCardInterface) {
+export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
   const [amount, setAmount] = useState<number>(1)
 
   function handleOnIncreaseAmount() {
@@ -31,24 +31,24 @@ export function CoffeCard({ coffee }: CoffeCardInterface) {
   }
 
   return (
-    <CoffeCardContainer>
-      <CoffeImage src={`${coffee.photo}`} alt="" />
-      <CoffeTypeContainer>
-        <CoffeType>
-          {coffee.tags?.map((tag) => (
+    <CoffeeCardContainer>
+      <CoffeeImage src={`${coffeee.photo}`} alt="" />
+      <CoffeeTypeContainer>
+        <CoffeeType>
+          {coffeee.tags?.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
-        </CoffeType>
-      </CoffeTypeContainer>
-      <CoffeName>{coffee.name}</CoffeName>
-      <CoffeDescription>{coffee.description}</CoffeDescription>
-      <CoffePriceContainer>
-        <CoffePrice>
+        </CoffeeType>
+      </CoffeeTypeContainer>
+      <CoffeeName>{coffeee.name}</CoffeeName>
+      <CoffeeDescription>{coffeee.description}</CoffeeDescription>
+      <CoffeePriceContainer>
+        <CoffeePrice>
           <span className="currencyType">R$</span>
-          <span className="price">{coffee.price}</span>
-        </CoffePrice>
+          <span className="price">{coffeee.price}</span>
+        </CoffeePrice>
         <BuyContainer>
-          <CoffeAmount>
+          <CoffeeAmount>
             <CounterButton>
               <Minus
                 size={'14'}
@@ -62,12 +62,12 @@ export function CoffeCard({ coffee }: CoffeCardInterface) {
                 onClick={() => handleOnIncreaseAmount()}
               />
             </CounterButton>
-          </CoffeAmount>
-          <CoffeAddToCartButton>
+          </CoffeeAmount>
+          <CoffeeAddToCartButton>
             <ShoppingCart size={'22'} color={'white'} />
-          </CoffeAddToCartButton>
+          </CoffeeAddToCartButton>
         </BuyContainer>
-      </CoffePriceContainer>
-    </CoffeCardContainer>
+      </CoffeePriceContainer>
+    </CoffeeCardContainer>
   )
 }

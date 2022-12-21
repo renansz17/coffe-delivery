@@ -66,7 +66,7 @@ export const PackageItem = styled.div`
     color: ${({ theme }) => theme.colors['base-white']};
   }
 `
-export const CoffeListContainer = styled.div`
+export const CoffeeListContainer = styled.div`
   h2 {
     font-weight: 800;
     font-size: 2rem;
@@ -74,7 +74,7 @@ export const CoffeListContainer = styled.div`
     margin-bottom: 55px;
   }
 `
-export const CoffeeItem = styled.div`
+export const CoffeeeItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -89,7 +89,7 @@ export const CoffeeItem = styled.div`
     color: ${({ theme }) => theme.colors['base-white']};
   }
 `
-export const CoffeList = styled.div`
+export const CoffeeList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;

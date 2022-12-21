@@ -1,4 +1,4 @@
-export interface Coffe {
+export interface Coffee {
   id?: number
   tags?: string[]
   name?: string

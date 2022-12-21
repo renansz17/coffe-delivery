@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CoffeCardContainer = styled.div`
+export const CoffeeCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.colors['base-card']};
@@ -10,21 +10,21 @@ export const CoffeCardContainer = styled.div`
   align-items: center;
   padding: 20px;
 `
-export const CoffeImage = styled.img`
+export const CoffeeImage = styled.img`
   align-self: center;
   width: 120px;
   position: relative;
   top: -20px;
 `
-export const CoffeName = styled.h3`
+export const CoffeeName = styled.h3`
   margin-bottom: 8px;
 `
 
-export const CoffeTypeContainer = styled.div`
+export const CoffeeTypeContainer = styled.div`
   display: flex;
 `
 
-export const CoffeType = styled.div`
+export const CoffeeType = styled.div`
   span {
     background: ${(props) => props.theme.colors['brand-yellow-light']};
     border-radius: 100px;
@@ -36,7 +36,7 @@ export const CoffeType = styled.div`
   }
   margin-bottom: 16px;
 `
-export const CoffeDescription = styled.p`
+export const CoffeeDescription = styled.p`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 0.8rem;
@@ -46,7 +46,7 @@ export const CoffeDescription = styled.p`
   margin-bottom: 33px;
 `
 
-export const CoffePriceContainer = styled.div`
+export const CoffeePriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +55,7 @@ export const CoffePriceContainer = styled.div`
 export const BuyContainer = styled.div`
   display: flex;
 `
-export const CoffePrice = styled.span`
+export const CoffeePrice = styled.span`
   .currencyType {
     font-size: 'Roboto', sans-serif;
     font-weight: 400;
@@ -69,11 +69,11 @@ export const CoffePrice = styled.span`
     margin-left: 2px;
   }
 `
-export const CoffeAmount = styled.div`
+export const CoffeeAmount = styled.div`
   display: flex;
   margin-right: 8px;
 `
-export const CoffeAddToCartButton = styled.button`
+export const CoffeeAddToCartButton = styled.button`
   background: ${(props) => props.theme.colors['brand-purple-dark']};
   border-radius: 6px;
   border: none;

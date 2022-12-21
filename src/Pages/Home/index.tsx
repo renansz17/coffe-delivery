@@ -1,19 +1,19 @@
 import React from 'react'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import introImage from '../../assets/coffeIntroImage.png'
+import introImage from '../../assets/coffeeIntroImage.png'
 import {
   CartItem,
-  CoffeeItem,
-  CoffeList,
-  CoffeListContainer,
+  CoffeeeItem,
+  CoffeeList,
+  CoffeeListContainer,
   InfoItens,
   IntroContainer,
   MainContainer,
   PackageItem,
   TimerItem,
 } from './styles'
-import { coffees } from '../../data/coffes'
-import { CoffeCard } from '../../components/CoffeCard'
+import { coffeees } from '../../data/coffees'
+import { CoffeeCard } from '../../components/CoffeeCard'
 
 export function Home() {
   return (
@@ -23,7 +23,7 @@ export function Home() {
           <div>
             <h1>Encontre o café perfeito para qualquer hora do dia</h1>
             <h2>
-              Com o Coffee Delivery você recebe seu café onde estiver, a
+              Com o Coffeee Delivery você recebe seu café onde estiver, a
               qualquer hora
             </h2>
           </div>
@@ -46,28 +46,28 @@ export function Home() {
               </div>
               <span>Entrega rápida e rastreada</span>
             </TimerItem>
-            <CoffeeItem>
+            <CoffeeeItem>
               <div className="item">
                 <Coffee size={'16'} weight="fill" />
               </div>
               <span>O café chega fresquinho até você</span>
-            </CoffeeItem>
+            </CoffeeeItem>
           </InfoItens>
         </div>
         <div>
           <img src={introImage} alt="" />
         </div>
       </IntroContainer>
-      <CoffeListContainer>
+      <CoffeeListContainer>
         <h2>Nossos cafés</h2>
         <div>
-          <CoffeList>
-            {coffees.map((coffee) => (
-              <CoffeCard coffee={coffee} key={coffee.id} />
+          <CoffeeList>
+            {coffeees.map((coffeee) => (
+              <CoffeeCard coffeee={coffeee} key={coffeee.id} />
             ))}
-          </CoffeList>
+          </CoffeeList>
         </div>
-      </CoffeListContainer>
+      </CoffeeListContainer>
     </MainContainer>
   )
 }
