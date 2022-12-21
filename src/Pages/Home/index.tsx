@@ -1,36 +1,19 @@
 import React from 'react'
-import {
-  Coffee,
-  Minus,
-  Package,
-  Plus,
-  ShoppingCart,
-  Timer,
-} from 'phosphor-react'
+import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import introImage from '../../assets/coffeIntroImage.png'
 import {
-  BuyContainer,
   CartItem,
-  CoffeAddToCartButton,
-  CoffeAmount,
-  CoffeCard,
-  CoffeDescription,
   CoffeeItem,
-  CoffeImage,
   CoffeList,
-  CoffeName,
-  CoffePrice,
-  CoffePriceContainer,
-  CoffeType,
-  CoffeTypeContainer,
-  CounterButton,
+  CoffeListContainer,
   InfoItens,
   IntroContainer,
   MainContainer,
   PackageItem,
   TimerItem,
 } from './styles'
-import coffe from '../../assets/americano.png'
+import { coffees } from '../../data/coffes'
+import { CoffeCard } from '../../components/CoffeCard'
 
 export function Home() {
   return (
@@ -75,41 +58,16 @@ export function Home() {
           <img src={introImage} alt="" />
         </div>
       </IntroContainer>
-      <CoffeList>
+      <CoffeListContainer>
         <h2>Nossos cafés</h2>
         <div>
-          <CoffeCard>
-            <CoffeImage src={coffe} alt="" />
-            <CoffeTypeContainer>
-              <CoffeType>
-                <span>TRADICIONAL</span>
-              </CoffeType>
-            </CoffeTypeContainer>
-            <CoffeName>expresso tradicional</CoffeName>
-            <CoffeDescription>
-              o tradicional café feito com água quente e grãos moidos
-            </CoffeDescription>
-            <CoffePriceContainer>
-              <CoffePrice>
-                <span className="currencyType">R$</span>
-                <span className="price">9,90</span>
-              </CoffePrice>
-              <BuyContainer>
-                <CoffeAmount>
-                  <CounterButton>
-                    <Minus size={'14'} color={'#8047F8'} />
-                    <span>1</span>
-                    <Plus size={'14'} color={'#8047F8'} />
-                  </CounterButton>
-                </CoffeAmount>
-                <CoffeAddToCartButton>
-                  <ShoppingCart size={'22'} color={'white'} />
-                </CoffeAddToCartButton>
-              </BuyContainer>
-            </CoffePriceContainer>
-          </CoffeCard>
+          <CoffeList>
+            {coffees.map((coffee) => (
+              <CoffeCard coffee={coffee} key={coffee.id} />
+            ))}
+          </CoffeList>
         </div>
-      </CoffeList>
+      </CoffeListContainer>
     </MainContainer>
   )
 }

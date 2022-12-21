@@ -2,12 +2,15 @@ import React from 'react'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import coffeLogo from '../../assets/coffeLogo.png'
 import { CartContainer, Header, HeaderItens, LocationContainer } from './styles'
+import { NavLink } from 'react-router-dom'
 
 export function FixedHeader() {
   return (
     <div>
       <Header>
-        <img src={coffeLogo} alt="" />
+        <NavLink to={'/'}>
+          <img src={coffeLogo} alt="" />
+        </NavLink>
         <HeaderItens>
           {/* Add flexible location */}
           <LocationContainer>
