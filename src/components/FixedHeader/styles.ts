@@ -25,11 +25,29 @@ export const LocationContainer = styled.div`
     margin-left: 4px;
   }
 `
-export const CartContainer = styled.div`
+export const CartContainer = styled.button`
   padding: 8px;
   background: ${(props) => props.theme.colors['brand-yellow-light']};
   border-radius: 6px;
+  border: none;
   svg {
     color: ${(props) => props.theme.colors['brand-yellow-dark']};
   }
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: 25px;
+    right: 153px;
+    color: ${(props) => props.theme.colors['base-white']};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: ${(props) => props.theme.colors['brand-yellow-dark']};
+  }
+  cursor: pointer;
 `

@@ -21,7 +21,7 @@ interface CoffeeCardInterface {
 
 export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
   const [amount, setAmount] = useState<number>(1)
-
+  const [coffee, setCoffee] = useState<Coffee>()
   function handleOnIncreaseAmount() {
     setAmount((state) => state + 1)
   }

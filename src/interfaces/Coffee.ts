@@ -4,5 +4,6 @@ export interface Coffee {
   name?: string
   description?: string
   photo?: string
-  price?: number
+  price: number
+  amount?: number
 }

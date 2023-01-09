@@ -18,6 +18,7 @@ export function FixedHeader() {
             <span>Porto Alegre, RS</span>
           </LocationContainer>
           <CartContainer>
+            <span>3</span>
             <ShoppingCart size={'22'} />
           </CartContainer>
         </HeaderItens>
