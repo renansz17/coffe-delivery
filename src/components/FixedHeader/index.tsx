@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import coffeeLogo from '../../assets/coffeeLogo.png'
 import { CartContainer, Header, HeaderItens, LocationContainer } from './styles'
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../contexts/CartContext'
 
 export function FixedHeader() {
+  const { cartQuantity } = useContext(CartContext)
   return (
     <div>
       <Header>
@@ -18,7 +20,7 @@ export function FixedHeader() {
             <span>Porto Alegre, RS</span>
           </LocationContainer>
           <CartContainer>
-            <span>3</span>
+            <span>{cartQuantity}</span>
             <ShoppingCart size={'22'} />
           </CartContainer>
         </HeaderItens>

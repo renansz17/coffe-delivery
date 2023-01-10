@@ -1,5 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 import { Coffee } from '../../interfaces/Coffee'
 import {
   BuyContainer,
@@ -16,12 +17,12 @@ import {
   CounterButton,
 } from './styles'
 interface CoffeeCardInterface {
-  coffeee: Coffee
+  coffee: Coffee
 }
 
-export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
-  const [amount, setAmount] = useState<number>(1)
-  const [coffee, setCoffee] = useState<Coffee>()
+export function CoffeeCard({ coffee }: CoffeeCardInterface) {
+  const [amount, setAmount] = useState<number>(0)
+  const { addCoffeeToCart } = useContext(CartContext)
   function handleOnIncreaseAmount() {
     setAmount((state) => state + 1)
   }
@@ -29,23 +30,31 @@ export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
   function handleOnDecreaseAmount() {
     setAmount((state) => state - 1)
   }
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      amount,
+    }
+    console.log(coffeeToAdd)
 
+    addCoffeeToCart(coffeeToAdd)
+  }
   return (
     <CoffeeCardContainer>
-      <CoffeeImage src={`src/assets/${coffeee.photo}`} alt="" />
+      <CoffeeImage src={`src/assets/${coffee.photo}`} alt="" />
       <CoffeeTypeContainer>
         <CoffeeType>
-          {coffeee.tags?.map((tag) => (
+          {coffee.tags?.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </CoffeeType>
       </CoffeeTypeContainer>
-      <CoffeeName>{coffeee.name}</CoffeeName>
-      <CoffeeDescription>{coffeee.description}</CoffeeDescription>
+      <CoffeeName>{coffee.name}</CoffeeName>
+      <CoffeeDescription>{coffee.description}</CoffeeDescription>
       <CoffeePriceContainer>
         <CoffeePrice>
           <span className="currencyType">R$</span>
-          <span className="price">{coffeee.price}</span>
+          <span className="price">{coffee.price}</span>
         </CoffeePrice>
         <BuyContainer>
           <CoffeeAmount>
@@ -64,7 +73,11 @@ export function CoffeeCard({ coffeee }: CoffeeCardInterface) {
             </CounterButton>
           </CoffeeAmount>
           <CoffeeAddToCartButton>
-            <ShoppingCart size={'22'} color={'white'} />
+            <ShoppingCart
+              size={'22'}
+              color={'white'}
+              onClick={handleAddToCart}
+            />
           </CoffeeAddToCartButton>
         </BuyContainer>
       </CoffeePriceContainer>
