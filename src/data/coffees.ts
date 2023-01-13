@@ -71,7 +71,7 @@ export const coffeees = [
     tags: ['tradicional', 'com leite'],
     name: 'Mocaccino',
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-    photo: 'mocaccino.png',
+    photo: 'mochaccino.png',
     price: 9.9,
   },
   {
