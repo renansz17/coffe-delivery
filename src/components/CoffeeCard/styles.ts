@@ -12,7 +12,6 @@ export const CoffeeCardContainer = styled.div`
 `
 export const CoffeeImage = styled.img`
   align-self: center;
-  width: 120px;
   position: relative;
   top: -40px;
 `

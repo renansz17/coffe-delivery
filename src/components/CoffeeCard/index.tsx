@@ -1,11 +1,11 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 import { Coffee } from '../../interfaces/Coffee'
+import { IncrementButton } from '../IncrementButton'
 import {
   BuyContainer,
   CoffeeAddToCartButton,
-  CoffeeAmount,
   CoffeeCardContainer,
   CoffeeDescription,
   CoffeeImage,
@@ -14,7 +14,6 @@ import {
   CoffeePriceContainer,
   CoffeeType,
   CoffeeTypeContainer,
-  CounterButton,
 } from './styles'
 interface CoffeeCardInterface {
   coffee: Coffee
@@ -35,7 +34,6 @@ export function CoffeeCard({ coffee }: CoffeeCardInterface) {
       ...coffee,
       amount,
     }
-    console.log(coffeeToAdd)
 
     addCoffeeToCart(coffeeToAdd)
   }
@@ -57,7 +55,7 @@ export function CoffeeCard({ coffee }: CoffeeCardInterface) {
           <span className="price">{coffee.price}</span>
         </CoffeePrice>
         <BuyContainer>
-          <CoffeeAmount>
+          {/* <CoffeeAmount>
             <CounterButton>
               <Minus
                 size={'14'}
@@ -71,7 +69,12 @@ export function CoffeeCard({ coffee }: CoffeeCardInterface) {
                 onClick={() => handleOnIncreaseAmount()}
               />
             </CounterButton>
-          </CoffeeAmount>
+          </CoffeeAmount> */}
+          <IncrementButton
+            amount={amount}
+            increaseAmount={handleOnIncreaseAmount}
+            decreaseAmount={handleOnDecreaseAmount}
+          />
           <CoffeeAddToCartButton>
             <ShoppingCart
               size={'22'}

@@ -10,7 +10,7 @@ export function FixedHeader() {
   return (
     <div>
       <Header>
-        <NavLink to={'/'}>
+        <NavLink to="/">
           <img src={coffeeLogo} alt="" />
         </NavLink>
         <HeaderItens>
@@ -19,10 +19,12 @@ export function FixedHeader() {
             <MapPin size={'22'} weight="fill" />
             <span>Porto Alegre, RS</span>
           </LocationContainer>
-          <CartContainer>
-            <span>{cartQuantity}</span>
-            <ShoppingCart size={'22'} />
-          </CartContainer>
+          <NavLink to="/checkout">
+            <CartContainer>
+              <span>{cartQuantity}</span>
+              <ShoppingCart size={'22'} />
+            </CartContainer>
+          </NavLink>
         </HeaderItens>
       </Header>
     </div>
